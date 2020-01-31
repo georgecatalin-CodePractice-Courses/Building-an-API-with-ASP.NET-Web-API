@@ -94,7 +94,6 @@ D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\S
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\System.Web.WebPages.Razor.xml
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\System.Web.Optimization.xml
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\Antlr3.Runtime.pdb
-D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\obj\Debug\TheCodeCamp.csprojAssemblyReference.cache
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\obj\Debug\TheCodeCamp.Migrations.InitialCreate.resources
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\obj\Debug\TheCodeCamp.Migrations.Initial.resources
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\obj\Debug\TheCodeCamp.csproj.GenerateResource.cache
