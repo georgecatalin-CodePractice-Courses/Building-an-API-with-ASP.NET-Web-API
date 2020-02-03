@@ -65,5 +65,27 @@ namespace TheCodeCamp.Controllers
                 return InternalServerError(ex);
             }
         }
+
+        //version of searching in the API by means of Query Strings
+
+        [Route("SearchByEventDate")]
+        [HttpGet]
+        public async Task<IHttpActionResult> SearchByEventDate(DateTime eventDate,bool includeTalks = false)
+        {
+            var result =await  _repository.GetAllCampsByEventDate(eventDate, includeTalks);
+
+            return Ok(_mapper.Map<IEnumerable<CampModel>>(result));
+        }
+
+        //version of searching in the API by means of routing
+
+        [Route("SearchByEventDate/{eventDate:DateTime}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> SearchByEventDateRoute(DateTime eventDate, bool includeTalks = false)
+        {
+            var result = await _repository.GetAllCampsByEventDate(eventDate, includeTalks);
+
+            return Ok(_mapper.Map<IEnumerable<CampModel>>(result));
+        }
     }
 }
