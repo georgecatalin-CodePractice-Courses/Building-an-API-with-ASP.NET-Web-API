@@ -206,4 +206,3 @@ C:\Users\georg\Documents\Visual Studio 2019\Projects\ASP.NET MVC 5\Building an A
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\AutoMapper.dll
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\AutoMapper.pdb
 D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\bin\AutoMapper.xml
-D:\CodeLab\Cursuri Pluralsight\Building a Web API with ASP.NET\TheCodeCamp\obj\Debug\TheCodeCamp.csprojAssemblyReference.cache
