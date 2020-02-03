@@ -13,7 +13,7 @@ namespace TheCodeCamp.Data
         public int Length { get; set; } = 1;
 
         //Associate related data to the model
-        public string LocationVenueName { get; set; }
+        public string VenueName { get; set; }
         public string LocationAddress1 { get; set; }
         public string LocationAddress2 { get; set; }
         public string LocationAddress3 { get; set; }
