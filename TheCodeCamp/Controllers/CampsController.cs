@@ -93,6 +93,13 @@ namespace TheCodeCamp.Controllers
         {
             try
             {
+                if (await _repository.GetCampAsync(model.Moniker)!=null)
+                {
+                    ModelState.AddModelError("Moniker", "This moniker already exists!");
+
+                }
+
+
                 if (ModelState.IsValid)
                 {
                     var camp = _mapper.Map<Camp>(model);
@@ -125,7 +132,7 @@ namespace TheCodeCamp.Controllers
                 return InternalServerError();
             }
 
-            return BadRequest();
+            return BadRequest(ModelState);
         }
     }
 }
