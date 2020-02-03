@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TheCodeCamp.Data
+namespace TheCodeCamp.Models
 {
     public class CampModel
     {
@@ -11,6 +11,9 @@ namespace TheCodeCamp.Data
         public string Moniker { get; set; }
         public DateTime EventDate { get; set; } = DateTime.MinValue;
         public int Length { get; set; } = 1;
+
+        //Include data related to Talks
+        public ICollection<TalkModel> Talks { get; set; }
 
         //Associate related data to the model
         public string VenueName { get; set; }
@@ -21,5 +24,7 @@ namespace TheCodeCamp.Data
         public string LocationStateProvince { get; set; }
         public string LocationPostalCode { get; set; }
         public string LocationCountry { get; set; }
+
+        
     }
 }
