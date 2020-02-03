@@ -87,5 +87,18 @@ namespace TheCodeCamp.Controllers
 
             return Ok(_mapper.Map<IEnumerable<CampModel>>(result));
         }
+
+        [Route()]
+        public async Task<IHttpActionResult> Post(CampModel model)
+        {
+            try
+            {
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError();
+            }
+        }
     }
 }
