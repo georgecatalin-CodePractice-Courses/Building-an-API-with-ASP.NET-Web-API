@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,10 +13,12 @@ namespace TheCodeCamp.Controllers
     public class CampsController : ApiController
     {
         private readonly ICampRepository _repository;
+        private readonly IMapper _mapper;
 
-        public CampsController(ICampRepository repository)
+        public CampsController(ICampRepository repository,IMapper mapper)
         {
             this._repository = repository;
+            this._mapper = mapper;
         }
         public async Task<IHttpActionResult> Get()
         {
@@ -23,8 +26,9 @@ namespace TheCodeCamp.Controllers
             {
                 var result =await  _repository.GetAllCampsAsync();
 
-                //return BadRequest("Whoops...I have made it all wrong.");
-                return Ok(result);
+                //Mapping
+                var mappedResult = _mapper.Map<IEnumerable<CampModel>>(result);
+                return Ok(mappedResult);
             }
             catch (Exception ex)
             {
