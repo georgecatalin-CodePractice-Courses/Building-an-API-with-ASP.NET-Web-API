@@ -65,10 +65,7 @@ namespace TheCodeCamp.Controllers
             {
                 return InternalServerError(ex);
             }
-            
-            
-          
-
+               
         }
 
         [Route()]
@@ -108,7 +105,33 @@ namespace TheCodeCamp.Controllers
                 return InternalServerError(ex);
             }
 
-            return BadRequest();
+            return BadRequest(ModelState);
+        }
+
+        [Route("{talkId:int}")]
+        public async Task<IHttpActionResult> Put(string moniker, int talkId, TalkModel model)
+        {
+            try
+            {
+                var talk = _mapper.Map<Talk>(model);
+                if (talk==null)
+                {
+                    return NotFound();
+                }
+
+                _mapper.Map(model, talk);
+
+                if (await _repository.SaveChangesAsync())
+                {
+                    return Ok(_mapper.Map<TalkModel>(talk));
+                }
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex)
+            }
+
+            return BadRequest(ModelState);
         }
     }
 }
