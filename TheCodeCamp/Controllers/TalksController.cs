@@ -128,10 +128,40 @@ namespace TheCodeCamp.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex)
+                return InternalServerError(ex);
             }
 
             return BadRequest(ModelState);
+        }
+
+        [Route("{talkId}")]
+        public async Task<IHttpActionResult> Delete(string moniker, int talkId)
+        {
+            try
+            {
+                var talk = await _repository.GetTalkByMonikerAsync(moniker, talkId, true);
+                if (talk==null)
+                {
+                    return NotFound();
+                }
+
+                _repository.DeleteTalk(talk);
+
+                if (await _repository.SaveChangesAsync())
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return InternalServerError();
+                }
+            }
+            catch ( Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+
+            
         }
     }
 }
